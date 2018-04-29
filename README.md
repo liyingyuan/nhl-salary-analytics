@@ -1,6 +1,8 @@
 # NHL Salary Analytics
 
-*Note: The following report was written for a final project with the target audience of a business decision maker.*## Introduction
+*Note: The following report was written for a final project with the target audience of a business decision maker.
+
+## Introduction
 
 **Motivation**
 
@@ -56,21 +58,17 @@ The Sportrac data was cleansed to remove the text from numeric fields (i.e. remo
 
 ### Data Validation
 
-The HockeyReference data is highly reputable and trusted within the industry. Random samplingwas done by comparing the statistics of one player, every 50 rows and comparing that data to NHL.com(i.e. 14 players in total). There were no material differences, only small differences occurred in time onice that were negligible. However, the Sportrac data is not as reliable, despite being the "largest onlinesports team & player contract resource on the web" (Ginniti, 2007). This is an unmitigated risk due to thefact that contract details are not always disclosed to the public. When manually cross-referencingcontracts with other sites that publish contracts, there were a number of contracts that differed. Onepossible reason is some sites may calculate a player's salary as a function of which level he played in (i.e.
-
-when playing in the AHL, the player earns the AHL salary; when playing in the NHL, the player earns theNHL salary). Another possible reason is players in the NHL level are deducted salary for games misseddue to suspension or unsportsmanlike conduct fines accrued during games.
+The HockeyReference data is highly reputable and trusted within the industry. Random samplingwas done by comparing the statistics of one player, every 50 rows and comparing that data to NHL.com(i.e. 14 players in total). There were no material differences, only small differences occurred in time onice that were negligible. However, the Sportrac data is not as reliable, despite being the "largest onlinesports team & player contract resource on the web" (Ginniti, 2007). This is an unmitigated risk due to thefact that contract details are not always disclosed to the public. When manually cross-referencingcontracts with other sites that publish contracts, there were a number of contracts that differed. Onepossible reason is some sites may calculate a player's salary as a function of which level he played in (i.e. when playing in the AHL, the player earns the AHL salary; when playing in the NHL, the player earns theNHL salary). Another possible reason is players in the NHL level are deducted salary for games misseddue to suspension or unsportsmanlike conduct fines accrued during games.
 
 ### Redundant Explanatory Variables
 
 A final issue with the data was the fact that there were numerous redundant explanatory variables.
 
-To simplify and generalize the model, it was important to first reduce the number of explanatory variablesas much as possible. Any column that could be represented by a combination of two or more columns waseliminated. For example, the Points column was removed as it is the sum of goals and assists. Duplicateswere removed by summarizing multiple columns into one column when the detail was not required (e.g.
-
-face-off wins and face-off losses were summarized into face-off win percentage).
+To simplify and generalize the model, it was important to first reduce the number of explanatory variablesas much as possible. Any column that could be represented by a combination of two or more columns waseliminated. For example, the Points column was removed as it is the sum of goals and assists. Duplicateswere removed by summarizing multiple columns into one column when the detail was not required (e.g. face-off wins and face-off losses were summarized into face-off win percentage).
 
 ## Analysis
 
-Multiple Linear Regression (MLR) models the relationship between two or more explanatoryvariables (i.e. independent variables) and a response variable (i.e. dependent variable) (Lacey, 1998). Theoutput of the model will be two items: the relative importance of each explanatory variable (i.e. a weight)and a mathematical formula combining the weights and the values to predict the response variable.
+Multiple Linear Regression (MLR) models the relationship between two or more explanatoryvariables (i.e. independent variables) and a response variable (i.e. dependent variable) (Lacey, 1998). Theoutput of the model will be two items: the relative importance of each explanatory variable (i.e. a weight) and a mathematical formula combining the weights and the values to predict the response variable.
 
 ### Why Multiple Linear Regression?
 
@@ -88,7 +86,9 @@ Thus, the response variable will be an estimate of average annual value for the 
 
 However, the NHL’s Collective Bargaining Agreement has many restrictions on contract length anddollar value. These limitations are not reflected in the model, which may result in negative salaries(violating the minimum salary clause) or areas where players salaries are much lower than predicted dueto contract maximums for younger players, yet to reach unrestricted free agency status.
 
-EXPLANATORY VARIABLEIt is first important to consider that the priorities of forwards and defencemen differ. Thus, twodifferent models will be generated: one for forwards and one for defencemen. The specific variables were selected by the t-statistic, which describes how extreme a variable is (i.e. is the explanatory variable’s impact on the response variable due to random chance or the actual variable) (Simon). A t-statistic further away (positive or negative) from zero is "better". The t-statistic is advantageous because it is in the units of the response variable (Runkel, 2016). Thus, it is possible to quantify how important a variable is to predicting salaries. Refer to Appendix A for a plot of the importance of each variable. Similarly to the initial data cleansing, some manual tweaking was done tostreamline the model and improve the accuracy. For instance, including the age of the player when he signed his contract and the age of the player at the present day were repetitive and the former did notmaterially impact the model if the current age was already included in the model.
+### EXPLANATORY VARIABLES
+
+It is first important to consider that the priorities of forwards and defencemen differ. Thus, twodifferent models will be generated: one for forwards and one for defencemen. The specific variables were selected by the t-statistic, which describes how extreme a variable is (i.e. is the explanatory variable’s impact on the response variable due to random chance or the actual variable) (Simon). A t-statistic further away (positive or negative) from zero is "better". The t-statistic is advantageous because it is in the units of the response variable (Runkel, 2016). Thus, it is possible to quantify how important a variable is to predicting salaries. Refer to Appendix A for a plot of the importance of each variable. Similarly to the initial data cleansing, some manual tweaking was done tostreamline the model and improve the accuracy. For instance, including the age of the player when he signed his contract and the age of the player at the present day were repetitive and the former did notmaterially impact the model if the current age was already included in the model.
 
 The models were trained with the 2017 - 2018 data resulting in the two linear equations below.
 
@@ -126,6 +126,18 @@ While both models have room for improvement, the models are fairly accurate cons
 
 ## Bibliography
 
-1. CapFriendly. (n.d.). https://www.capfriendly.com/players/alex _Alex Ovechkin_. From CapFriendly: -ovechkin2. Frost, J. (2013, May 30). _Goodness-of-Fit?_ From The Minitab Blog: [http://blog.minitab.com/blog/adventures](http://blog.minitab.com/blog/adventures) _Regression Analysis: How Do I Interpret R-squared and Assess the_ - in-statistics2/regression-analysis-how-do-i-interpret-r-squared-and-assess-the-goodness-of-fit
+1. CapFriendly. (n.d.). https://www.capfriendly.com/players/alex _Alex Ovechkin_. From CapFriendly: -ovechkin
 
-(^) 3. Ginniti, M. (2007). _About_. From Sportrac: [http://www.spotrac.com/about/](http://www.spotrac.com/about/)4. Lacey, M. (1998). [http://www.stat.yale.edu/Courses/1997](http://www.stat.yale.edu/Courses/1997) _Multiple Linear Regression_ - 98/101/linmult.htm. From Yale Statistics:5. Lund Research Ltd. (2013). Laerd _Multiple Linear Regression Analysis using SPSS Statistics_. FromStatistics: https://statistics.laerd.com/spss-tutorials/multiple-regression-using-spss-statistics.php(^) 6. Runkel, P. (2016, November 4). _What Are T Values and P Values in Statistics?_ From TheMinitab Blog: [http://blog.minitab.com/blog/statisticsand-p-values-in-statistics](http://blog.minitab.com/blog/statisticsand-p-values-in-statistics) - and-quality-data-analysis/what-are-t-values7. Simon, S. (n.d.). [http://www.pmean.com/definitions/tstat.htm](http://www.pmean.com/definitions/tstat.htm) _What is a tstatistic?_ (C. M. Hospital, Producer) From8. Vollman, R. (2015, May 30). [http://www.hockeyabstract.com/testimonials/nhl2014](http://www.hockeyabstract.com/testimonials/nhl2014) _NHL 2014-15 Player Data_ - 15playerdata. Retrieved 2015 from HockeyAbstract:
+2. Frost, J. (2013, May 30). _Goodness-of-Fit?_ From The Minitab Blog: [http://blog.minitab.com/blog/adventures](http://blog.minitab.com/blog/adventures) _Regression Analysis: How Do I Interpret R-squared and Assess the-r2-in-statistics2/regression-analysis-how-do-i-interpret-r-squared-and-assess-the-goodness-of-fit
+
+(^) 3. Ginniti, M. (2007). _About_. From Sportrac: [http://www.spotrac.com/about/](http://www.spotrac.com/about/)
+
+4. Lacey, M. (1998). [http://www.stat.yale.edu/Courses/1997](http://www.stat.yale.edu/Courses/1997) _Multiple Linear Regression_ - 98/101/linmult.htm. From Yale Statistics:
+
+5. Lund Research Ltd. (2013). Laerd _Multiple Linear Regression Analysis using SPSS Statistics_. FromStatistics: https://statistics.laerd.com/spss-tutorials/multiple-regression-using-spss-statistics.php(^) 
+
+6. Runkel, P. (2016, November 4). _What Are T Values and P Values in Statistics?_ From TheMinitab Blog: [http://blog.minitab.com/blog/statisticsand-p-values-in-statistics](http://blog.minitab.com/blog/statisticsand-p-values-in-statistics) - and-quality-data-analysis/what-are-t-values
+
+7. Simon, S. (n.d.). [http://www.pmean.com/definitions/tstat.htm](http://www.pmean.com/definitions/tstat.htm) _What is a tstatistic?_ (C. M. Hospital, Producer) From
+
+8. Vollman, R. (2015, May 30). [http://www.hockeyabstract.com/testimonials/nhl2014](http://www.hockeyabstract.com/testimonials/nhl2014) _NHL 2014-15 Player Data_ - 15playerdata. Retrieved 2015 from HockeyAbstract:
