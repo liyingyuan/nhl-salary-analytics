@@ -1,6 +1,6 @@
 # NHL Salary Analytics
 
-*Note: The following report was written for a final project with the target audience of a business decision maker.
+*Note: The following report was written for a final project with the target audience of a business decision maker.*
 
 ## Introduction
 
