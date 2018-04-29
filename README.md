@@ -1,5 +1,9 @@
 # NHL Salary Analytics
 
+
+
+*Note: The following report was written for a final project with the target audience of a business decision maker.* 
+
 ## Introduction
 
 **Motivation**
@@ -208,8 +212,7 @@ player's salary. This will be determined by (adjusted) R^2 , which is the percen
 that is explained by the model, adjusted for the number of predictors in the model (four for forwards, five
 for defencemen). In other words, the R^2 shows how close the actual data point is from the prediction line
 
-FWD= (^) !"""! 2. 94 AGE− 1. 94 GP+ 0. 09 TOI+ 0. 08 FenFor− 41. 87 **(1)**^
-DEF= (^) !"""! ( 2. 96 AGE− 1. 01 GP+ 0. 20 PIM− 0. 03 HIT+ 1. 35 PPAst− 15. 95 ) **(2)**^
+![eqs](https://latex.codecogs.com/gif.latex?%5Cinline%20FWD%20%3D%20%5Cfrac%7B1%7D%7B1000%7D%20%282.94%5Ctextup%7BAGE%7D%20-%201.94%5Ctextup%7BGP%7D%20+%200.09%5Ctextup%7BTOI%7D%20+%200.08%5Ctextup%7BFenFor%7D%20-%2041.87%29%5C%5C%20DEF%20%3D%20%5Cfrac%7B1%7D%7B1000%7D%20%282.96%5Ctextup%7BAGE%7D%20-%201.01%5Ctextup%7BGP%7D%20+%200.20%5Ctextup%7BPIM%7D%20-%200.03%5Ctextup%7BHIT%7D%20+%201.35%5Ctextup%7BPPAst%7D%20-%2015.95%29)
 
 
 (after plotting the equation on a graph). In general, the higher the R^2 , the better the data fits the model
@@ -241,6 +244,13 @@ team were to adopt the models, they could be evolved into team specific models t
 the team emphasizes in its game style and coaching with the added benefit of more accuracy as the teams
 have access to proprietary information.
 
+![exhibit-1](exhibits/exhibit-1.png)
+
+![exhibit-2](exhibits/exhibit-2.png)
+
+![exhibit-2](exhibits/exhibit-3.png)
+
+![exhibit-2](exhibits/exhibit-4.png)
 
 
 
