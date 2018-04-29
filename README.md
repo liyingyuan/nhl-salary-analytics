@@ -86,7 +86,7 @@ Thus, the response variable will be an estimate of average annual value for the 
 
 However, the NHL’s Collective Bargaining Agreement has many restrictions on contract length anddollar value. These limitations are not reflected in the model, which may result in negative salaries(violating the minimum salary clause) or areas where players salaries are much lower than predicted dueto contract maximums for younger players, yet to reach unrestricted free agency status.
 
-### EXPLANATORY VARIABLES
+### Explanatory Variables
 
 It is first important to consider that the priorities of forwards and defencemen differ. Thus, twodifferent models will be generated: one for forwards and one for defencemen. The specific variables were selected by the t-statistic, which describes how extreme a variable is (i.e. is the explanatory variable’s impact on the response variable due to random chance or the actual variable) (Simon). A t-statistic further away (positive or negative) from zero is "better". The t-statistic is advantageous because it is in the units of the response variable (Runkel, 2016). Thus, it is possible to quantify how important a variable is to predicting salaries. Refer to Appendix A for a plot of the importance of each variable. Similarly to the initial data cleansing, some manual tweaking was done tostreamline the model and improve the accuracy. For instance, including the age of the player when he signed his contract and the age of the player at the present day were repetitive and the former did notmaterially impact the model if the current age was already included in the model.
 
