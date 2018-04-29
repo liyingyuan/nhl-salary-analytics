@@ -23,15 +23,14 @@ library(xtable)
 ###########################################################
 # Load CSVs
 ###########################################################
-setwd("~/Library/Mobile Documents/com~apple~CloudDocs/Documents/School/Laurier (2017-2018)/Business Analytics/Final Project/hockey-ref-dataset")
-basic <- read.csv('basic_stats.csv', stringsAsFactors = FALSE, strip.white = TRUE)
-advanced <- read.csv('advanced_stats.csv', stringsAsFactors = FALSE, strip.white = TRUE)
-sportrac <- read.csv('sportrac-all.csv', stringsAsFactors = FALSE, strip.white = TRUE)
-salary_caps <- read.csv('salary_caps.csv', stringsAsFactors = FALSE, strip.white = TRUE)
+basic <- read.csv('data/basic_stats.csv', stringsAsFactors = FALSE, strip.white = TRUE)
+advanced <- read.csv('data/advanced_stats.csv', stringsAsFactors = FALSE, strip.white = TRUE)
+sportrac <- read.csv('data/sportrac-all.csv', stringsAsFactors = FALSE, strip.white = TRUE)
+salary_caps <- read.csv('data/salary_caps.csv', stringsAsFactors = FALSE, strip.white = TRUE)
 
 # Due to limited availability of salary data, we are using a different source for the 
 # test data. However, this should not affect anything.
-test <- read.csv('2015_super_spreadsheet.csv', stringsAsFactors = FALSE, strip.white = TRUE)
+test <- read.csv('data/2015_super_spreadsheet.csv', stringsAsFactors = FALSE, strip.white = TRUE)
 ################################################################################################
 ################################################################################################
 # PREPARE
